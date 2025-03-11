@@ -123,7 +123,7 @@ def slack_alert(context):
     """
 
     # Send Message to Slack
-    payload = {"text": message, "channel": "#cities-weather-etl-notification"}
+    payload = {"text": message, "channel": "#all-dummy-weather-team"}
     response = requests.post(SLACK_WEBHOOK_URL, json=payload)
 
     # Log Response (Optional)
@@ -138,7 +138,7 @@ slack_success_notification = SlackWebhookOperator(
     Weather ETL Pipeline Completed Successfully!
     Dag: weather_etl_to_snowflake
     """,
-    channel="#cities-weather-etl-notification",
+    channel="#all-dummy-weather-team",
     trigger_rule="all_success"  # Runs only if all tasks succeed
 )
 

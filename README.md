@@ -147,6 +147,7 @@ AND table_type = 'BASE TABLE';  -- all caps too
 
 ![img7](screenshots/img7.png)
 <br>
+
 ![img8](screenshots/img8.png)
 <br><br>
 
@@ -337,8 +338,10 @@ In between, I would test run the DAG via the web browser (and this requires stop
 
 ![img11](screenshots/img11.png)
 <br>
+
 ![img12](screenshots/img12.png)
 <br>
+
 ![img13](screenshots/img13.png)
 <br><br>
 
@@ -355,8 +358,10 @@ Upon the success of the orchestration, I verified the ETL process through the fo
 
 ![img15](screenshots/img15.png)
 <br>
+
 ![img16](screenshots/img16.png)
 <br>
+
 ![img17](screenshots/img17.png)
 <br>
 
@@ -375,6 +380,7 @@ SELECT * FROM cities_weather_database.cities_weather_schema.beijing;
 ```
 
 ![img18](screenshots/img18.png)
+<br>
 
 ![img19](screenshots/img19.png)
 <br>
@@ -383,10 +389,13 @@ SELECT * FROM cities_weather_database.cities_weather_schema.beijing;
 
 ![img20](screenshots/img20.png)
 <br>
+    
 ![img21](screenshots/img21.png)
 <br>
+
 ![img22](screenshots/img22.png)
 <br>
+
 ![img23](screenshots/img23.png)
 <br>
 

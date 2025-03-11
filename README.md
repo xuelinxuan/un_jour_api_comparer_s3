@@ -1,0 +1,2 @@
+# Cities-Weather-S3-Snowflake-Slack-notif-ETL-by-Airflow-on-EC2
+This is my second industry-level ETL project. This data pipeline orchestration uses Apache Airflow on AWS EC2. It demonstrates how to build an ETL data pipeline that would extract data (JSON) from the OpenWeatherMap API, transform it, dump it as CSV in S3 bucket, then copy it to destination tables in Snowflake DW and send Slack notification.

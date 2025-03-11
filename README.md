@@ -146,7 +146,7 @@ AND table_type = 'BASE TABLE';  -- all caps too
 ```
 
 ![img7](screenshots/img7.png)
-
+<br>
 ![img8](screenshots/img8.png)
 <br><br>
 
@@ -193,7 +193,7 @@ pip install pandas requests
 ```
 pip install apache-airflow
 ```
-#### for BashOperator (which uses Linux CLI for running AWS COMMANDS as well as Jinja Templating)
+#### For BashOperator (which uses Linux CLI for running AWS COMMANDS as well as Jinja Templating)
 ```
 pip install --upgrade awscli
 ```                
@@ -209,7 +209,7 @@ pip install apache-airflow-providers-snowflake
 ```
 pip install snowflake-connector-python
 ```
-#### for airflow.providers.slack.operators.slack_webhook
+#### For airflow.providers.slack.operators.slack_webhook
 ```
 pip install apache-airflow-providers-slack
 ```
@@ -336,9 +336,9 @@ Building on experience and knowledge from my previous ETL project (see it here),
 In between, I would test run the DAG via the web browser (and this requires stopping and restarting Airflow via the CLI). All aspects of the orchestration were tested, including the DAG run failure and retry. See the finished Airflow orchestration DAG Python file [here](code/cities_weather_etl.py).
 
 ![img11](screenshots/img11.png)
-
+<br>
 ![img12](screenshots/img12.png)
-
+<br>
 ![img13](screenshots/img13.png)
 <br><br>
 
@@ -354,9 +354,9 @@ Upon the success of the orchestration, I verified the ETL process through the fo
 #### 1) Checked the S3 bucket and its contents (they can also be listed via CLI)
 
 ![img15](screenshots/img15.png)
-
+<br>
 ![img16](screenshots/img16.png)
-
+<br>
 ![img17](screenshots/img17.png)
 <br>
 
@@ -382,11 +382,11 @@ SELECT * FROM cities_weather_database.cities_weather_schema.beijing;
 #### 3) Checked the Slack Channel via web browser
 
 ![img20](screenshots/img20.png)
-
+<br>
 ![img21](screenshots/img21.png)
-
+<br>
 ![img22](screenshots/img22.png)
-
+<br>
 ![img23](screenshots/img23.png)
 <br>
 

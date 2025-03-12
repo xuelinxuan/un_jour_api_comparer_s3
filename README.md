@@ -7,7 +7,7 @@ It demonstrates how to build an ETL data pipeline that would extract data (JSON)
 ## GENERAL OVERVIEW OF PROJECT
 This basic BI Engineering project which I did demonstrates the process of how to extract the current weather information for a list of 5 cities from the Open Weather Map (OWM) API (https://openweathermap.org/), used Python to perform data transformation, loaded the resulting data into an Amazon S3 bucket using Bash command and thereafter send out a Slack notification to a stakeholder channel. 
 
-This ETL pipeline (workflow) was orchestrated and scheduled using Apache airflow running in an AWS EC2 instance.
+This ETL pipeline (workflow) was orchestrated and scheduled using Apache airflow running in an AWS EC2 instance. The orchestration would run every 5 minutes, and has just one retry attempt for an operation.
 
 Apache Airflow is an open-source platform used for orchestrating and scheduling workflows of tasks and data pipelines.
 

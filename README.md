@@ -329,7 +329,7 @@ https://api.openweathermap.org/data/2.5/weather?q=portland&appid=59250d7y8k082p9
 ```
 <br><br>
 
-Building on experience and knowledge from my previous ETL project (see it here), I found the “extract from API” and “load to S3” tasks (as well as other tasks) to be pretty straightforward as they are based on how to use the relevant Operators in Airflow. This part was done by connecting my VS Code to the EC2 instance running Airflow then doing the coding of the DAG over there. 
+Building on experience and knowledge from my previous ETL project ([see it here](https://github.com/vaxdata22/Lagos-Weather-S3-Snowflake-Email-notif-ETL-by-Airflow-on-EC2)), I found the “extract from API” and “load to S3” tasks (as well as other tasks) to be pretty straightforward as they are based on how to use the relevant Operators in Airflow. This part was done by connecting my VS Code to the EC2 instance running Airflow then doing the coding of the DAG over there. 
 
 ![img10](screenshots/img10.png)
 <br> 

@@ -1,5 +1,5 @@
 # OpenWeatherMap API to S3 bucket to Snowflake ETL Pipeline by Airflow on EC2 with Slack notification
-This is my second industry-level ETL project. This data pipeline orchestration uses Apache Airflow on AWS EC2. 
+This is my second ETL project based on AWS Cloud. This data pipeline orchestration uses Apache Airflow on AWS EC2. 
 
 It demonstrates how to build an ETL data pipeline that would extract data (JSON) from the OpenWeatherMap API, transform it, dump it as CSV in S3 bucket, then copy it to destination tables in Snowflake DW and send Slack notification.
 <br><br>
@@ -16,7 +16,7 @@ It begins with extracting JSON format data from the API, and then transforming i
 The orchestration proceeds to dump the CSV file into an S3 bucket data lake. 
 The project then concludes by loading the data from the S3 bucket into corresponding tables in an already prepared Snowflake data warehouse.
 
-The project exemplifies how to use the S3Hook to interact with CSV files present in an S3 bucket. 
+The project exemplifies how to use the `S3Hook` to interact with CSV files present in an S3 bucket. 
 In addition, it features how to create a stage area in Snowflake that points to an Amazon S3 bucket. 
 
 The project goes on to demonstrate how to build and automate a data pipeline to load data from Amazon S3 bucket into a snowflake table and using the SlackWebhookOperator to send out an email notification to stakeholders when the data completed loading in the snowflake table using Airflow running in an AWS EC2 instance. 
@@ -329,7 +329,7 @@ https://api.openweathermap.org/data/2.5/weather?q=portland&appid=59250d7y8k082p9
 ```
 <br><br>
 
-Building on experience and knowledge from my previous ETL project ([see it here](https://github.com/vaxdata22/Lagos-Weather-S3-Snowflake-Email-notif-ETL-by-Airflow-on-EC2)), I found the “extract from API” and “load to S3” tasks (as well as other tasks) to be pretty straightforward as they are based on how to use the relevant Operators in Airflow. This part was done by connecting my VS Code to the EC2 instance running Airflow then doing the coding of the DAG over there. 
+Building on experience and knowledge from my previous ETL project ([see it here](https://github.com/vaxdata22/Lagos-Weather-S3-Snowflake-Email-notif-ETL-by-Airflow-on-EC2)), I found the “extract from API” and “load to S3” tasks (as well as other tasks) to be pretty straightforward as they are based on how to use the relevant Operators in Airflow. This part was done by connecting my VS Code to the EC2 instance running Airflow and then doing the coding of the DAG over there. 
 
 ![img10](screenshots/img10.png)
 <br> 
@@ -403,22 +403,22 @@ SELECT * FROM cities_weather_database.cities_weather_schema.beijing;
 Since this was for demonstration purposes, upon the success of the project the following were done as teardown: 
 
 * Deactivate my OpenWeatherMap API key, stop my AWS EC2 instance, and clear the S3 bucket that was used in the project
-* Deactivate the Slack app set up on my Slack Workspace that was used by Airflow for this project and elete the IAM User that I used for Snowflake
+* Deactivate the Slack app set up on my Slack Workspace that was used by Airflow for this project and delete the IAM User that I used for Snowflake
 
-Note: The Snowflake credentials showed here are not real.
+Note: The Snowflake credentials shown here are not real.
 <br><br>
 
 ## CHALLENGES AND FINAL THOUGHTS:
 
 1) Originally, I planned this project to make use of Google BigQuery. I felt that I could pick this up easily given my fundamental knowledge of Snowflake.
-   However I ran into issues when trying to integrate BigQuery to AWS due to my limited knowledge.
+   However, I ran into issues when trying to integrate BigQuery to AWS due to my limited knowledge.
    Then I switched to Amazon RedShift. I had some issues too due to my limited knowledge.
    Therefore, being somewhat comfortable with Snowflake, I chose to use it for this project.
-   However in a future project, I might eventually find a way to use BigQuery or RedShift, especially BigQuery.
+   However, in a future project, I might eventually find a way to use BigQuery or RedShift, especially BigQuery.
 
 2) The first time the orchestration succeeded, the tables (in the data warehouse) lacked values for columns whose names in the CSV files had spaces.
    This was because these columns in the CSV files did not really "match" their corresponding columns in the DW tables (e.g. "Wind Speed" > "WIND_SPEED", case insensitive though).
-   I later figured out that to get around this problem, I would have to specify the all columns in the correct order in the COPY INTO block, and also replaced PARSE_HEADERS=True with SKIP_HEADERS=1 in the CSV File Format of the Snowflake DW Schema.
+   I later figured out that to get around this problem, I would have to specify all the columns in the correct order in the `COPY INTO` block and also replaced `PARSE_HEADERS=True` with `SKIP_HEADERS=1` in the CSV File Format of the Snowflake DW Schema.
    This would automatically map the columns irrespective of whether their column names totally match or not.
 
 To wipe off incomplete data, I decided to clear the tables, and trigger the DAG again:
@@ -432,6 +432,6 @@ TRUNCATE TABLE cities_weather_database.cities_weather_schema.beijing;
 <br> 
 
 3) From project ideation, planning, development, testing, and deployment took me eight (4) working days because as a self-taught BI Developer, this was my second AWS Cloud Data Engineering project that is based on Airflow, EC2, S3, and Snowflake.
-   The project could have taken me two or three days of not that I spent a good deal of time fiddling with BigQuery and RedShift.
+   The project could have taken me two or three days if not that I spent a good deal of time fiddling with BigQuery and RedShift.
 
 #### Thank you for going through this project with me!

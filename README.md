@@ -41,7 +41,7 @@ The following account of the project development process is not enough to enable
 For instance, there is no detailing of the steps involved in creating accounts with Snowflake, OpenWeatherMap, and Amazon AWS. 
 There is also no detailing of the steps in setting up the Slack app at https://api.slack.com/apps, creating the AWS EC2 instance from scratch and preparing it to work with Airflow (Firewall settings for HTTP/HTTPS/SSH and attaching the IAM Role), connecting VSCode to the EC2 instance, creating S3 bucket along with the IAM User, as well as accessing Airflow via web browser.
 
-However an experienced and capable Data Engineer should be familiar with how these are set up, but the reader who is not knowledgeable in these areas is hereby encouraged to do their research, enroll in a Data Engineering boot camp or learn from data engineering tutorials available online on some websites or some great channels on YouTube, or reach out to me for clarification. 
+However an person who is knowledgeable in Data Engineering should be familiar with how these are set up, but the reader who is not knowledgeable in these areas is hereby encouraged to do their research, enroll in a Data Engineering boot camp or learn from data engineering tutorials available online on some websites or some great channels on YouTube, or reach out to me for clarification. 
 With that out of the way, let’s go over the key steps in this project.
 
 Having satisfied all the 8 requirements in the preceding section, I proceeded to carry out the following setup:

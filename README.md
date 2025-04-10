@@ -37,7 +37,7 @@ This will indeed help a data team to stay proactive on what is happening on the 
 <br><br>
 
 ## STEPS OF THE WORKFLOW
-The following account of the project development process is not enough to enable the reader to code along or replicate the whole process from start to finish. 
+The following account of the project development process may not be enough to enable the reader to code along or replicate the whole process from start to finish. 
 For instance, there is no detailing of the steps involved in creating accounts with Snowflake, OpenWeatherMap, and Amazon AWS. 
 There is also no detailing of the steps in setting up the Slack app at https://api.slack.com/apps, creating the AWS EC2 instance from scratch and preparing it to work with Airflow (Firewall settings for HTTP/HTTPS/SSH and attaching the IAM Role), connecting VSCode to the EC2 instance, creating S3 bucket along with the IAM User, as well as accessing Airflow via web browser.
 

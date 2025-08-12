@@ -33,6 +33,7 @@ def kelvin_to_fahrenheit(temp):
     return (temp - 273.15) * 9/5 + 32
 
 # Extract, Transform, and Load Weather Data to S3
+#返回当天的数据再去对比
 def extract_transform_weather_data(city):
     base_url = "https://api.openweathermap.org/data/2.5/weather"
     response = requests.get(f"{base_url}?q={city}&appid={API_KEY}")
@@ -180,3 +181,4 @@ with DAG('weather_api_s3_snowflake_slack_etl',
 
     # Ensure Slack Notification runs after all city ETL tasks are done
     load_to_snowflake_tasks >> slack_success_notification
+
